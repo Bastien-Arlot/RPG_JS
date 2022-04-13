@@ -5,6 +5,3 @@ class Paladin extends Character{
         this.healingLighting = healingLighting;
     };
 };
-
-const paladin1 = new Paladin();
-console.log(paladin1);

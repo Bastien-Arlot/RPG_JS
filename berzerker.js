@@ -5,6 +5,3 @@ class Berzerker extends Character{
         this.rage = rage;
     };
 };
-
-const berzerker1 = new Berzerker();
-console.log(berzerker1);

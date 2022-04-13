@@ -6,6 +6,3 @@ class Fighter extends Character{
     };
 
 };
-
-const fighter1 = new Fighter();
-console.log(fighter1);

@@ -5,6 +5,3 @@ class Monk extends Character{
         this.heal = heal;
     };
 };
-
-const monk1 = new Monk();
-console.log(monk1);

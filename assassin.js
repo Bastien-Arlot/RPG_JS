@@ -5,6 +5,3 @@ class Assassin extends Character{
         this.shadowHit= shadowHit;
     };
 };
-
-const assassin1 = new Assassin();
-console.log(assassin1);

@@ -21,8 +21,12 @@ class Character{
 
     }
     dealDamage = (victim) => {
-        console.log(`${this.name} has decided to attack ${victim.name}`)
-        victim.takeDamage(this.dmg);
+        if(victim.hp > 0) {
+            console.log(`${this.name} has decided to attack ${victim.name}`)
+            victim.takeDamage(this.dmg);
+        }else{
+            console.log(`come on you can't attack a dead man, you lost your turn!!`)
+        }
     }
 
 }
