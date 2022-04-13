@@ -9,9 +9,14 @@ class Character{
     }
     takeDamage = (from, dmg) => {
         if (this.defense > 0){
-            this.dmg -= this.defense;
+            dmg -= this.defense;
             console.log(`Thanks to his Attack Special DarkVision ${this.name} reduce the dammages by 2, unfortunately his power is now gone`)
             this.defense = 0;
+        }
+
+        if (this.shadowHit = true){
+            this.dmg = 0;
+            this.shadowHit = false;
         }
 
         this.hp -= this.dmg;
