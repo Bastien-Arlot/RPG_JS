@@ -6,9 +6,9 @@ class Game {
         this.choosenCharacter = choosenCharacter;
     }
 
-    newTurn = () =>{
-            this.turnLeft -= 1;
-            alert(`There is only ${this.turnLeft} turn`);
+    newTurn = () => {
+        this.turnLeft -= 1;
+        alert(`There is only ${this.turnLeft} turn`);
     }
 
     initialize = () => {
@@ -56,38 +56,107 @@ class Game {
 
     }
     attackMenu = () => {
-    while(this.turnLeft !== 0) {
-        console.log(`There is only ${this.turnLeft} turn`);
-        let attackMenuChoice = prompt(`what ${this.choosenCharacter.name}  should do?
+        while (this.turnLeft !== 0 && this.choosenCharacter.status === "alive") {
+            console.log(`There is only ${this.turnLeft} turn`);
+            let attackMenuChoice = prompt(`what ${this.choosenCharacter.name}  should do?
          1 :attack ${this.players.map(x => x.name).join(" or ")}
          2 : see the stats of everyone
-         3 : use your special attack vs someone ?`);
-        switch (attackMenuChoice) {
-            case "1":
-                let victimeChoice = prompt(`who do you want to fight? ${this.players.map(x => x.name)} are their name, 1, 2, 3 and 4 are their numbers, chose  your target with a number carefully `)
-                switch (victimeChoice) {
-                    case "1":
-                        this.choosenCharacter.dealDamage(this.players[0]);
-                        this.newTurn();
-                        break;
-                    case "2":
-                        this.choosenCharacter.dealDamage(this.players[1]);
-                        this.newTurn();
-                        break;
-                    case "3":
-                        this.choosenCharacter.dealDamage(this.players[2]);
-                        this.newTurn();
-                        break;
-                    case "4":
-                        this.choosenCharacter.dealDamage(this.players[3]);
-                        this.newTurn();
-                        break;
-                }
+         3 : use his special attack vs someone ?`);
+            switch (attackMenuChoice) {
+                case "1":
+                    let victimChoice = prompt(`who do you want to fight?
+                 ${this.players.map(x => x.name)} are their name,
+                  1, 2, 3 and 4 are their numbers, chose  your target with a number carefully `);
+                    switch (victimChoice) {
+                        case "1":
+                            this.choosenCharacter.dealDamage(this.players[0]);
+
+                            if (this.players[0].status === "alive") {
+                                console.log(`${this.players[0].name} counter attack!`)
+                                this.players[0].dealDamage(this.choosenCharacter);
+                            }
+                            ;
+                            this.newTurn();
+                            break;
+                        case "2":
+                            this.choosenCharacter.dealDamage(this.players[1]);
+                            this.players[1].dealDamage(this.choosenCharacter);
+                            if (this.players[1].status === "alive") {
+                                console.log(`${this.players[1].name} counter attack!`)
+                                this.players[1].dealDamage(this.choosenCharacter);
+                            }
+                            ;
+                            this.newTurn();
+                            break;
+                        case "3":
+                            this.choosenCharacter.dealDamage(this.players[2]);
+                            if (this.players[2].status === "alive") {
+                                console.log(`${this.players[2].name} counter attack!`)
+                                this.players[2].dealDamage(this.choosenCharacter);
+                            }
+                            ;
+                            this.newTurn();
+                            break;
+                        case "4":
+                            this.choosenCharacter.dealDamage(this.players[3]);
+                            if (this.players[3].status === "alive") {
+                                console.log(`${this.players[3].name} counter attack!`)
+                                this.players[3].dealDamage(this.choosenCharacter);
+                            }
+                            ;
+                            this.newTurn();
+                            break;
+                    }
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    let victimAttSpeChoice = prompt(`who do you want to fight?
+                 ${this.players.map(x => x.name)} are their name,
+                  1, 2, 3 and 4 are their numbers, chose  your target with a number carefully `);
+                    switch (victimAttSpeChoice) {
+                        case "1":
+                            this.choosenCharacter.attackSpe(this.players[0]);
+                            if (this.players[0].status === "alive") {
+                                console.log(`${this.players[0].name} counter attack!`)
+                                this.players[0].dealDamage(this.choosenCharacter);
+                            }
+                            ;
+                            this.newTurn();
+                            break;
+                        case "2":
+                            this.choosenCharacter.attackSpe(this.players[1]);
+                            if (this.players[1].status === "alive") {
+                                console.log(`${this.players[1].name} counter attack!`)
+                                this.players[1].dealDamage(this.choosenCharacter);
+                            }
+                            ;
+                            this.newTurn();
+                            break;
+                        case "3":
+                            this.choosenCharacter.attackSpe(this.players[2]);
+                            if (this.players[2].status === "alive") {
+                                console.log(`${this.players[2].name} counter attack!`)
+                                this.players[2].dealDamage(this.choosenCharacter);
+                            }
+                            ;
+                            this.newTurn();
+                            break;
+                        case "4":
+                            this.choosenCharacter.attackSpe(this.players[3]);
+                            if (this.players[3].status === "alive") {
+                                console.log(`${this.players[3].name} counter attack!`)
+                                this.players[3].dealDamage(this.choosenCharacter);
+                            }
+                            ;
+                            this.newTurn();
+                            break;
+                    }
+            }
+
         }
     }
-    }
 }
-
 
 
 // menu = (nbr) => {
