@@ -1,15 +1,15 @@
 class Game {
-    constructor(turnLeft = 10, state = true, players = [], choosenCharacter) {
+    constructor(turnLeft = 3, state = true, players = [], choosenCharacter) {
         this.turnLeft = turnLeft;
         this.state = state;
         this.players = players;
         this.choosenCharacter = choosenCharacter;
     }
 
-    // newTurn = () =>
-    //         this.turnLeft -= 1;
-    //         console.log(`There is only ${this.turnLeft} turn`);
-    // }
+    newTurn = () =>{
+            this.turnLeft -= 1;
+            alert(`There is only ${this.turnLeft} turn`);
+    }
 
     initialize = () => {
         let fighter = new Fighter();
@@ -68,19 +68,19 @@ class Game {
                 switch (victimeChoice) {
                     case "1":
                         this.choosenCharacter.dealDamage(this.players[0]);
-                        this.turnLeft -= 1;
+                        this.newTurn();
                         break;
                     case "2":
                         this.choosenCharacter.dealDamage(this.players[1]);
-                        this.turnLeft -= 1;
+                        this.newTurn();
                         break;
                     case "3":
                         this.choosenCharacter.dealDamage(this.players[2]);
-                        this.turnLeft -= 1;
+                        this.newTurn();
                         break;
                     case "4":
                         this.choosenCharacter.dealDamage(this.players[3]);
-                        this.turnLeft -= 1;
+                        this.newTurn();
                         break;
                 }
         }
