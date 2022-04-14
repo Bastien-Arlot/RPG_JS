@@ -25,8 +25,9 @@ class Character{
         if(this.hp <= 0){
             this.status = "dead";
             alert(`Oh no ${this.name} is ${this.status}`);
-            from.mana =+ 20;
-            alert(`${from.name} won 20 mana for his victory, congrats!`)
+            from.mana += 20;
+            from.hp += 10;
+            alert(`${from.name} won 20 mana and 10hp for his victory, he now has ${from.hp} hp and ${from.mana} mana!`)
         } else{
             alert(` ${this.name} has ${this.hp} hp left`);
         }
@@ -40,5 +41,10 @@ class Character{
             alert(`This man is already dead, your turn is lost for NOTHING`)
         }
     }
+    stats = () => {
+        let { name, hp, mana, dmg} = this;
+        return ` ${name} : ${hp} HP | ${mana} Mana | ${dmg} Atk`;
+    };
+
 
 }

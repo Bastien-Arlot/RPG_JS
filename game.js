@@ -11,6 +11,16 @@ class Game {
         alert(`You'll have to survive for ${this.turnLeft} turn`);
     }
 
+    watchStats = () => {
+        console.log("--------------- Characters still in game ----------------");
+        this.players.forEach((player) => {
+            if (player.status === "alive") {
+                console.log(player.stats());
+            }
+        });
+        console.log("---------------------------------------------------------");
+    };
+
     initialize = () => {
         let fighter = new Fighter();
         let assassin = new Assassin();
@@ -73,7 +83,7 @@ class Game {
     }
     attackMenu = () => {
         while (this.turnLeft !== 0 && this.choosenCharacter.status === "alive") {
-            console.log(`There is only ${this.turnLeft} turn`);
+            console.log(`There is only ${this.turnLeft} turns left`);
             let attackMenuChoice = prompt(`what ${this.choosenCharacter.name}  should do?
          1 :attack ${this.players.map(x => x.name).join(" or ")}
          2 : see the stats of everyone
@@ -145,6 +155,7 @@ class Game {
                     }
                     break;
                 case "2":
+                    this.watchStats();
                     break;
                 case "3":
                     let victimAttSpeChoice = prompt(`who do you want to fight?
