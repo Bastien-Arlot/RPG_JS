@@ -12,7 +12,4 @@ startGame = () => {
 
 }
 document.querySelector("#start-screen").addEventListener("click", startGame);
-const canvas = document.querySelector("#canvas1");
-const ctx = canvas.getContext('2d');
-canvas.width = 900;
-canvas.height = 600;
+document.querySelector("audio").volume= 0.2;

@@ -30,7 +30,7 @@ class Game {
         let wizard = new Wizard();
         let pirate = new Pirate();
         this.players.push(fighter, assassin, paladin, monk, berzerker, wizard, pirate);
-        alert(`                               Welcome to the LastChance
+        alert(`                               Welcome to the Last Chance
                        -----------------------------------
         During your short life you were an evil person, God decided to put you in a fight against 6 persons that were far more criminal than you in their life. If you succeed to stay alive for ${this.turnLeft} turn you'll go to heaven, if not... Hell is waiting for you!`);
         let menuChoice = prompt(`you'll know have to choose your character:

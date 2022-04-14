@@ -43,7 +43,7 @@ class Character{
     }
     stats = () => {
         let { name, hp, mana, dmg} = this;
-        return ` ${name} : ${hp} HP | ${mana} Mana | ${dmg} Atk`;
+        return `${name} : ${hp} HP | ${mana} Mana | ${dmg} Atk`;
     };
 
 
