@@ -9,7 +9,7 @@ class Fighter extends Character{
         if (this.mana < 20){
             return alert("you don't have enough mana, select another option");
         } else{
-           victim.takeDamage(5);
+           victim.takeDamage(this,5);
            this.mana -= 20;
            this.defense += 2;
         }

@@ -9,18 +9,19 @@ class Character{
     }
     takeDamage = (from, dmg) => {
         if (this.defense > 0){
-            dmg -= this.defense;
+            // dmg -= this.defense;
+            dmg -= 2;
             console.log(`Thanks to his Attack Special DarkVision ${this.name} reduce the dammages by 2, unfortunately his power is now gone`)
             this.defense = 0;
         }
 
-        if (this.shadowHit = true){
-            this.dmg = 0;
-            this.shadowHit = false;
+        if (this.shadowHit > 0){
+            dmg = 0;
+            this.shadowHit = 0;
         }
 
-        this.hp -= this.dmg;
-        console.log(`${this.dmg} damages were inflicted`);
+        this.hp -= dmg;
+        console.log(`${dmg} damages were inflicted`);
         if(this.hp <= 0){
             this.status = "dead";
             console.log(`Oh no ${this.name} is ${this.status}`);
