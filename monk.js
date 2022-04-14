@@ -9,7 +9,7 @@ class Monk extends Character{
             return alert("you don't have enough mana, select another option");
         } else{
             this.hp += 8;
-            console.log(`Your power is so strong it heal you of 8hp! You have now ${this.hp} hp but it seems you didnt hit your opponent.
+            alert(`Your power is so strong it heal you of 8hp! You have now ${this.hp} hp but it seems you didnt hit your opponent.
             Since he still feels threatened i think it won't leave you alone just like that...`);
 
         }

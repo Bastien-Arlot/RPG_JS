@@ -11,7 +11,7 @@ class Character{
         if (this.defense > 0){
             // dmg -= this.defense;
             dmg -= 2;
-            console.log(`Thanks to his Attack Special DarkVision ${this.name} reduce the dammages by 2, unfortunately his power is now gone`)
+            alert(`Thanks to his Attack Special DarkVision ${this.name} reduce the dammages by 2, unfortunately his power is now gone`)
             this.defense = 0;
         }
 
@@ -21,20 +21,20 @@ class Character{
         }
 
         this.hp -= dmg;
-        console.log(`${dmg} damages were inflicted`);
+        alert(`${dmg} damages were inflicted`);
         if(this.hp <= 0){
             this.status = "dead";
-            console.log(`Oh no ${this.name} is ${this.status}`);
+            alert(`Oh no ${this.name} is ${this.status}`);
             from.mana =+ 20;
-            console.log(`${from.name} won 20 mana for his victory, congrats!`)
+            alert(`${from.name} won 20 mana for his victory, congrats!`)
         } else{
-            console.log(` ${this.name} has ${this.hp} hp left`);
+            alert(` ${this.name} has ${this.hp} hp left`);
         }
 
     }
     dealDamage = (victim) => {
         if(victim.hp > 0 && this.status === "alive") {
-            console.log(`${this.name} has decided to attack ${victim.name}`)
+            alert(`${this.name} has decided to attack ${victim.name}`)
             victim.takeDamage(this, this.dmg)
         }else{
             alert(`This man is already dead, your turn is lost for NOTHING`)

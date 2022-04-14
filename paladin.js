@@ -9,7 +9,7 @@ class Paladin extends Character{
             return alert("you don't have enough mana, select another option");
         } else{
             this.hp += 5;
-            console.log(`Your Healing Lighting is so strong it heal you for 5hp, you now have ${this.hp} hp but i think this is not all...`)
+            alert(`Your Healing Lighting is so strong it heal you for 5hp, you now have ${this.hp} hp but i think this is not all...`)
             victim.takeDamage(this,4);
 
         }
