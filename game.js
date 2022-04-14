@@ -1,5 +1,5 @@
 class Game {
-    constructor(turnLeft = 3, state = true, players = [], choosenCharacter) {
+    constructor(turnLeft = 10, state = true, players = [], choosenCharacter) {
         this.turnLeft = turnLeft;
         this.state = state;
         this.players = players;
@@ -16,6 +16,7 @@ class Game {
         this.players.forEach((player) => {
             if (player.status === "alive") {
                 console.log(player.stats());
+                alert(player.stats());
             }
         });
         console.log("---------------------------------------------------------");
